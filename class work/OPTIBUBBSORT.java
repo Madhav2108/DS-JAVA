@@ -3,17 +3,17 @@ public class Main{
     public static void main(String[] args)
     {
         Scanner s=new Scanner(System.in);
-        int x=s.nextInt();
+        int xt=s.nextInt();
         int i,j,temp=0;
-        int ar[]=new int[x];
+        int ar[]=new int[xt];
         Boolean swap=false;
-        for(i=0;i<x;i++)
+        for(i=0;i<xt;i++)
         {
             ar[i]=s.nextInt();
         }
-        for(i=0;i<x;i++)
+        for(i=0;i<xt;i++)
         {
-            for(j=1;j<x;j++)
+            for(j=1;j<xt;j++)
             {
                 if(ar[j]>ar[j+1])
                 {
@@ -33,7 +33,7 @@ public class Main{
             }
         }
 
-        for(i=0;i<x;i++)
+        for(i=0;i<xt;i++)
         {
             System.out.println(ar[i]);
         }
