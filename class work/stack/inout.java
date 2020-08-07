@@ -2,8 +2,8 @@ import java.util.Scanner;
 class inout   
 {  
     int top;   
-    int maxsize = 10;  
-    int[] arr = new int[maxsize];  
+    int m = 10;  
+    int[] arr = new int[m];  
       
       
     boolean isEmpty()  
@@ -16,7 +16,7 @@ class inout
     }  
     boolean push (Scanner sc)  
     {  
-        if(top == maxsize-1)  
+        if(top == m-1)  
         {  
             System.out.println("Overflow");  
             return false;  
@@ -63,7 +63,7 @@ public static void main(String[] args) {
     {  
         System.out.println("\nChose one\n");  
         System.out.println("\n1.Push\n2.Pop\n3.Show\n4.Exit");  
-        System.out.println("\n Enter your choice \n");        
+        System.out.println("\n Enter your option\n");        
         choice = sc.nextInt();  
         switch(choice)  
         {  
@@ -84,13 +84,13 @@ public static void main(String[] args) {
             }  
             case 4:   
             {  
-                System.out.println("Exiting....");  
+                System.out.println("thankyou ");  
                 System.exit(0);  
                 break;   
             }  
             default:  
             {  
-                System.out.println("Please Enter valid choice ");  
+                System.out.println("Enter valid option");  
             }   
         };  
     }  
