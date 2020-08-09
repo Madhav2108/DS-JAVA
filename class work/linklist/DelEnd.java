@@ -1,20 +1,20 @@
-import java.util.*;
 
 public class DelEnd {
     class Node {
         int data;
         Node next;
 
-        public Node(int data) {
+        public Node(final int data) {
             this.data = data;
             this.next = null;
         }
     }
 
     public Node head = null;
+    private Node lst;
 
-    public void insertEnd(int data) {
-        Node temp = new Node(data);
+    public void insertEnd(final int data) {
+        final Node temp = new Node(data);
         if (head == null) {
             head = temp;
         } else {
@@ -53,8 +53,8 @@ public class DelEnd {
         }
     }
 
-    public static void main(String[] args) {
-        DelEnd ob = new DelEnd();
+    public static void main(final String[] args) {
+        final DelEnd ob = new DelEnd();
         ob.insertEnd(40);
         ob.insertEnd(50);
         ob.insertEnd(60);

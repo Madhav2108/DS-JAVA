@@ -1,4 +1,4 @@
-import java.util.*;
+import static java.lang.System.out;
 
 public class DelBeg {
 
@@ -42,7 +42,7 @@ public class DelBeg {
 
     public void deleteBeg() {
         if (head == null) {
-            System.out.println("LIst is empty");
+            out.println("LIst empty");
         } else {
             Node temp = head;
             head = head.next;
@@ -59,7 +59,7 @@ public class DelBeg {
         ob.insertEnd(70);
         System.out.println("List: ");
         ob.display();
-        System.out.println("List after deleting from begining: ");
+        System.out.println("List after deleting");
         ob.deleteBeg();
         ob.display();
     }

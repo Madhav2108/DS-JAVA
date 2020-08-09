@@ -1,7 +1,7 @@
-import java.util.*;
 import java.io.*;
+import java.util.*;
 
-public class Reverse {
+public class CTL{
 
     static class SinglyLinkedListNode {
         public int data;
@@ -35,7 +35,8 @@ public class Reverse {
         }
     }
 
-    public static void printSinglyLinkedList(SinglyLinkedListNode node, String sep, BufferedWriter bufferedWriter) throws IOException {
+    public static void printSinglyLinkedList(SinglyLinkedListNode node, String sep, BufferedWriter bufferedWriter)
+            throws IOException {
         while (node != null) {
             bufferedWriter.write(String.valueOf(node.data));
 
@@ -46,20 +47,26 @@ public class Reverse {
             }
         }
     }
-    static SinglyLinkedListNode reverse(SinglyLinkedListNode head) {
-        if(head == null) return head;
 
-        SinglyLinkedListNode prev = null;
-        SinglyLinkedListNode current_node = head;
-        while(current_node != null)
-        {
-            SinglyLinkedListNode next_node = current_node.next;
-            current_node.next = prev;
-            prev = current_node;
-            current_node = next_node;
+    static boolean compareLists(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
+        if (head1 == null && head2 == null)
+            return true;
+
+        SinglyLinkedListNode first_runner = head1;
+        SinglyLinkedListNode second_runner = head2;
+        while (first_runner != null && second_runner != null) {
+            if (first_runner.data != second_runner.data) {
+                break;
+            }
+            if (first_runner.next == null && second_runner.next == null) {
+                return true;
+            }
+            first_runner = first_runner.next;
+            second_runner = second_runner.next;
         }
-        return prev;
+        return false;
     }
+
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
@@ -69,19 +76,31 @@ public class Reverse {
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
         for (int testsItr = 0; testsItr < tests; testsItr++) {
-            SinglyLinkedList llist = new SinglyLinkedList();
+            SinglyLinkedList llist1 = new SinglyLinkedList();
 
-            int llistCount = scanner.nextInt();
+            int llist1Count = scanner.nextInt();
             scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-            for (int i = 0; i < llistCount; i++) {
-                int llistItem = scanner.nextInt();
+            for (int i = 0; i < llist1Count; i++) {
+                int llist1Item = scanner.nextInt();
                 scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-                llist.insertNode(llistItem);
+                llist1.insertNode(llist1Item);
             }
-            SinglyLinkedListNode llist1 = reverse(llist.head);
-            printSinglyLinkedList(llist1, " ", bufferedWriter);
+
+            SinglyLinkedList llist2 = new SinglyLinkedList();
+
+            int llist2Count = scanner.nextInt();
+            scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+            for (int i = 0; i < llist2Count; i++) {
+                int llist2Item = scanner.nextInt();
+                scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+                llist2.insertNode(llist2Item);
+            }
+            boolean result = compareLists(llist1.head, llist2.head);
+            bufferedWriter.write(String.valueOf(result ? 1 : 0));
             bufferedWriter.newLine();
         }
         bufferedWriter.close();
