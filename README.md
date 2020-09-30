@@ -1,3 +1,3 @@
 # DS-JAVA
 
-new que of ds java from class work 
+new questions of ds java from class work 
