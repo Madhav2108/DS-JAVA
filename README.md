@@ -1,3 +1,5 @@
-# DS-JAVA
+# JAVA Practice
+## Welcome Coders 
 
-new questions of ds java from class work 
+### This repo is for Practice Notes
+
