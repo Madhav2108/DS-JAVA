@@ -1,0 +1,36 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s= new Scanner(System.in);
+		String sen=new String(s.nextLine());
+		int maxcount=0;
+		char maxchar='a';
+		char str[]=sen.toCharArray();
+		Arrays.sort(str);
+		int count=0;
+		for(int i=0;i<str.length-1;i++)
+		{
+		    
+		    if(str[i]!=str[i+1])
+		    {
+		        if(count>maxcount)
+		        {
+		            maxcount=count;
+		            maxchar=str[i];
+		        }
+		        count=0;
+		    }
+		    else{
+		        count++;
+		    }
+		    if(i==str.length-2)
+		    {
+		        if(str[i+1]==maxchar);
+		        maxcount++;
+		    }
+		}
+		System.out.println(maxchar);
+		System.out.print(maxcount);
+	}
+}
