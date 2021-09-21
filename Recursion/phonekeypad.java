@@ -4,42 +4,44 @@ public class Main
 {
     public static String[] search(int n)
     {
-        String a[]={""};
+
         switch(n)
         {
             case 2:
-                 a[]={"a","b","c"};
-                return a;
-                break;
+                String b[]={"a","b","c"};
+                return b;
+               
             case 3:
-                 a[]={"d","e","f"};
+                String a[]={"d","e","f"};
                 return a;
-                break;
+                
             case 4:
-                a[]={"g","h","i"};
-                return a;
-                break;
+                String c[]={"g","h","i"};
+                return c;
+               
             case 5:
-                 a[]={"j","k","l"};
-                return a;
-                break;
+                String d[]={"j","k","l"};
+                return d;
+                
             case 6:
-                 a[]={"m","n","o"};
-                return a;
-                break;
+                String e[]={"m","n","o"};
+                return e;
+              
             case 7:
-                 a[]={"p","q","r","s"};
-                return a;
-                break;
+                String f[]={"p","q","r","s"};
+                return f;
+                
             case 8:
-                 a[]={"t","u","v"};
-                return a;
-                break;
+                String g[]={"t","u","v"};
+                return g;
+               
             case 9:
-                 a[]={"w","x","y","z"};
-                return a;
-                break;
+                String h[]={"w","x","y","z"};
+                return h;
+               
         }
+        String i[]={""};
+        return i;
     }
     public static String[] phone(int num)
     {
@@ -67,7 +69,10 @@ public class Main
 	Scanner s=new Scanner(System.in);
 	int count=s.nextInt();
 	String ans[]=phone(count);
-	System.out.println(ans);
+	for(int i=0;i<ans.length;i++)
+	{
+	    System.out.println(ans[i]);
+	}
 	
 	}
 }
